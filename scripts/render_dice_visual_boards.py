@@ -214,15 +214,24 @@ def board_value_chain():
         x += 227
     pill(d, 1330, 290, 132, "LEAK TO TEST", PINK, WHITE, 12)
     text(d, (1498, 307), "proof → click → order", 15, PINK, True)
-    section(d, 44, 338, 1196, "What the evidence makes visible")
+    section(d, 44, 338, 1196, "What the evidence makes visible | team audit: 28 accessible public creator-content leads")
     cards = [
-        ("CREATOR", "26/28 audited videos demonstrate products; 24/28 discuss suitability.", PLUM, "CCA"),
-        ("SHOPPER", "Shade, skin type, texture and outcome are decision variables, not just views.", PINK, "CCA"),
-        ("BRAND", "PR volume and product defects create a need for better fit, quality and attribution.", ORANGE, "CCA"),
-        ("MEESHO", "The public audit does not yet prove the PDP can carry this context into conversion.", PINK, "M-PDP"),
+        ("26/28", "product demos", PLUM, "CCA"),
+        ("24/28", "suitability discussions", PINK, "CCA"),
+        ("23/28", "visible outcomes", "#20aebd", "CCA"),
+        ("25/28", "audience-specific recs", ORANGE, "CCA"),
+        ("28/28", "personal experience", "#879327", "CCA"),
     ]
     for i, (head, body, color, tag) in enumerate(cards):
-        card(d, 44 + i * 300, 390, 280, 154, head, body, color, tag)
+        xx = 44 + i * 240
+        rounded(d, (xx, 390, xx + 224, 500), WHITE, 14, color, 2)
+        evidence_tag(d, xx + 14, 404, tag, color)
+        text(d, (xx + 14, 454), head, 29, color, True)
+        text(d, (xx + 14, 484), body, 12, PLUM_DARK, True)
+    rounded(d, (44, 516, 1240, 548), PALE, 8)
+    text(d, (58, 532), "Observed proof fields", 11, MUTED, True)
+    for i, label in enumerate(["shade", "skin fit", "texture", "comparison", "outcome", "CTA"]):
+        pill(d, 218 + i * 158, 520, 138, label.upper(), CYAN if i < 3 else PINK, WHITE, 9)
     rounded(d, (44, 572, 1240, 762), PLUM_DARK, 18)
     text(d, (72, 600), "DIAGNOSIS", 16, ORANGE, True)
     paragraph(d, (72, 636), "The strongest defensible problem is not “creators lack proof.” It is that Meesho has not yet shown a measurable, reusable handoff for proof that already exists.", 1130, 23, WHITE, True, 8)
@@ -238,6 +247,11 @@ def board_value_chain():
     metrics = [("28", "accessible creator audits", PLUM_DARK), ("0/28", "routed to Meesho in sample", PINK), ("1", "public-source flow capability", "#20aebd"), ("0", "primary respondents in tracker", PINK)]
     for i, (value, label, color) in enumerate(metrics):
         metric(d, 1306, 390 + i * 88, 572, value, label, color)
+    section(d, 1306, 754, 572, "Competitor context | public artifact only", ORANGE)
+    rounded(d, (1306, 806, 1878, 858), WHITE, 12, GRID, 1)
+    text(d, (1322, 832), "Creator content → product surface → attribution → payout", 13, PLUM_DARK, True, "lm")
+    tiny_bar(d, 1322, 872, 520, .72, "#20aebd", h=12)
+    text(d, (1322, 902), "Evidence exists for capability; Meesho-specific handoff remains the test.", 12, MUTED, True)
     footer(d, "Evidence: CCA-001–030; M-CAT-001; M-PDP-001; COMP-FLOW-001 | Diagnosis remains a pilot hypothesis.")
     return b
 
@@ -377,8 +391,23 @@ def board_quick_win():
     text(d, (1592, 862), "KILL / SCALE", 15, ORANGE, True, "mm")
     paragraph(d, (1334, 895), "Scale only if treatment beats control on the handoff without uneconomic creator effort or sample cost.", 510, 16, WHITE, True, 4)
     rounded(d, (44, 818, 1236, 960), SOFT, 18)
-    text(d, (640, 846), "PILOT → MEASURED HANDOFF → LEARN → SCALE OR KILL", 21, PLUM_DARK, True, "mm")
-    text(d, (640, 900), "The bridge is not the final product. It is the instrument that reveals where value leaks.", 15, MUTED, True, "mm")
+    text(d, (70, 842), "PILOT FUNNEL | TARGET / ASSUMPTION, NOT OBSERVED RESULT", 13, PLUM_DARK, True)
+    funnel = [
+        ("CREATORS", "recruited", .85, PINK),
+        ("CONTENT", "created", .70, "#20aebd"),
+        ("REACH", "viewers", .62, ORANGE),
+        ("CLICKS", "product taps", .45, PLUM),
+        ("ORDERS", "completed", .30, "#879327"),
+        ("REPEAT", "reorder", .16, PINK),
+    ]
+    x = 70
+    for label, sub, level, color in funnel:
+        rounded(d, (x, 870, x + 174, 934), WHITE, 10, GRID, 1)
+        text(d, (x + 12, 883), label, 10, PLUM_DARK, True)
+        tiny_bar(d, x + 12, 907, 150, level, color, h=9)
+        text(d, (x + 12, 928), sub, 9, MUTED, True)
+        x += 190
+    text(d, (640, 950), "Measure the full chain before scaling creator supply.", 12, MUTED, True, "mm")
     footer(d, "All cohort sizes and metrics are proposed operating parameters. The pilot exists to generate Meesho-specific evidence.")
     return b
 
@@ -419,6 +448,20 @@ def board_evidence():
         icon_circle(d, x + 16, 733, num, color, 34, PLUM_DARK if color in [ORANGE, CYAN] else WHITE)
         text(d, (x + 62, 736), head, 14, PLUM_DARK, True)
         text(d, (x + 62, 765), body, 12, INK)
+        x += 310
+    section(d, 44, 842, 1250, "Source-to-claim mapping", PLUM_DARK)
+    claim_map = [
+        ("A", "Meesho surface", "category page visible; PDP blocked", "#20aebd"),
+        ("B", "Creator capability", "28 accessible audits; descriptive only", PINK),
+        ("C", "Competitor benchmark", "one capability + artifacts + pending", ORANGE),
+        ("P", "Primary research", "tracker exists; respondent count = 0", PLUM),
+    ]
+    x = 44
+    for code, head, body, color in claim_map:
+        rounded(d, (x, 894, x + 292, 1018), WHITE, 14, color, 2)
+        icon_circle(d, x + 14, 910, code, color, 30, PLUM_DARK if color == ORANGE else WHITE)
+        text(d, (x + 58, 910), head, 12, PLUM_DARK, True)
+        paragraph(d, (x + 14, 950), body, 262, 11, INK, True, 2)
         x += 310
     guards = [("NO FABRICATED TIMESTAMPS", "Sequential transcript logs are not line-level timecodes."), ("NO FABRICATED RESPONDENTS", "Primary tracker count remains 0 unless independently recorded."), ("NO INVENTED UPLIFT", "Pilot metrics are proposed, not observed results."), ("NO H0–H5 SCORE", "Hypotheses remain open until primary research and transaction evidence.")]
     y = 220
@@ -478,7 +521,7 @@ def board_creator():
         y += 78
     rounded(d, (1320, 760, 1878, 900), PLUM_DARK, 18)
     text(d, (1599, 808), "The evidence changes the problem statement:\nnot content creation — proof transfer.", 20, WHITE, True, "mm")
-    quote_card(d, 1320, 920, 558, 64, "Useful proof is observable. Its commerce value is not yet observable.", "Synthesis from CCA audit | inference", ORANGE)
+    quote_card(d, 1320, 910, 558, 76, "Useful proof is observable. Its commerce value is not yet observable.", "Synthesis from CCA audit | inference", ORANGE)
     footer(d, "Evidence tier: user-supplied manual audit layer. Counts are descriptive and do not establish transaction impact.")
     return b
 
@@ -641,7 +684,32 @@ def board_economics():
         text(d, (1085, y + 35), label, 17, INK, True, "lm")
         y += 85
     rounded(d, (1000, 690, 1878, 790), PLUM_DARK, 18)
-    text(d, (1439, 740), "No uplift is claimed. The pilot is the mechanism for generating defensible uplift.", 20, WHITE, True, "mm")
+    text(d, (1439, 740), "No uplift is claimed. The pilot generates the evidence to size uplift.", 20, WHITE, True, "mm")
+    section(d, 44, 782, 1834, "Pilot event spine | the data that turns a story into a business case", ORANGE)
+    events = [
+        ("01", "VIEW", "proof shown", PLUM),
+        ("02", "CLICK", "tag / CTA", PINK),
+        ("03", "PDP", "fit resolved", "#20aebd"),
+        ("04", "ORDER", "transaction", ORANGE),
+        ("05", "RETURN", "quality signal", "#879327"),
+        ("06", "REPEAT", "retention", PLUM),
+    ]
+    x = 44
+    for i, (num, head, body, color) in enumerate(events):
+        rounded(d, (x, 838, x + 278, 928), WHITE, 14, color, 2)
+        icon_circle(d, x + 14, 852, num, color, 28, PLUM_DARK if color in [ORANGE, "#879327"] else WHITE)
+        text(d, (x + 56, 854), head, 13, PLUM_DARK, True)
+        text(d, (x + 56, 883), body, 11, MUTED, True)
+        if i < len(events) - 1:
+            text(d, (x + 282, 882), "→", 20, PINK, True, "mm")
+        x += 304
+    owners = [("CREATOR", "time + payout", PINK), ("SHOPPER", "confidence + fit", "#20aebd"), ("SELLER", "quality + margin", ORANGE), ("MEESHO", "allocation + NMV", "#879327")]
+    x = 44
+    for head, body, color in owners:
+        rounded(d, (x, 946, x + 438, 1016), PALE, 12)
+        pill(d, x + 14, 963, 92, head, color, PLUM_DARK if color in [ORANGE, "#879327"] else WHITE, 9)
+        text(d, (x + 126, 980), body, 12, INK, True, "lm")
+        x += 458
     footer(d, "Illustrative measurement model only. No conversion, NMV, repeat or retention result is claimed.")
     return b
 
@@ -686,8 +754,71 @@ def board_risks():
     return b
 
 
+def board_sources():
+    b, d = board_appendix("The claim stack is traceable from evidence to pilot.", "APPENDIX | SOURCE LEDGER", "The case is intentionally bounded: every important statement is tagged to an evidence family, a limitation and a next decision.")
+    section(d, 44, 158, 1834, "Source ledger | what each evidence family can and cannot support")
+    side_label(d, 8, 210, 708, "TRACEABILITY")
+    headers = ["FAMILY", "SOURCE / ARTIFACT", "SUPPORTS", "DOES NOT SUPPORT", "NEXT DECISION"]
+    widths = [190, 340, 405, 440, 415]
+    x = 44
+    for h, w in zip(headers, widths):
+        rounded(d, (x, 210, x + w, 252), PLUM_DARK, 0)
+        text(d, (x + w // 2, 231), h, 11, WHITE, True, "mm")
+        x += w
+    rows = [
+        ("A | Meesho", "M-CAT-001 category page; M-PDP-001 403 record", "Public category cues; access limitation", "PDP proof, conversion, return or repeat", "Secure replayable PDP evidence"),
+        ("B | Creator", "CCA-001–030; 28 accessible audits", "Proof capability, suitability, shade, outcome, CTA patterns", "Meesho routing, transaction impact, earnings", "Test proof transfer with real cohorts"),
+        ("C | Competitor", "COMP-FLOW-001 + public artifacts", "Capability existence and benchmark structure", "Five verified end-to-end journeys; private economics", "Replay one complete flow independently"),
+        ("P | Primary", "DICE_PRIMARY_RESEARCH_TRACKER.md", "Interview / survey design and lead pipeline", "Any respondent finding; any H0–H5 score", "Acquire genuine creator, shopper and seller responses"),
+    ]
+    y = 264
+    colors = [CYAN, PINK, ORANGE, PLUM]
+    for i, row in enumerate(rows):
+        color = colors[i]
+        x = 44
+        for j, (value, w) in enumerate(zip(row, widths)):
+            fill = CYAN if i == 1 and j == 2 else WHITE
+            rounded(d, (x, y, x + w, y + 84), fill, 0, color if j == 0 else GRID, 2 if j == 0 else 1)
+            text(d, (x + 12, y + 16), value, 12 if j == 0 else 11, PLUM_DARK if j == 0 else INK, j == 0 or j == 4, "lm")
+            x += w
+        y += 92
+    section(d, 44, 650, 1160, "Evidence-strength legend", ORANGE)
+    legend = [
+        ("DIRECT", "observed in the workspace", PLUM),
+        ("PUBLIC", "official / public-source artifact", CYAN),
+        ("INFERRED", "diagnosis or model, labelled", ORANGE),
+        ("PENDING", "primary / private evidence needed", PINK),
+    ]
+    x = 44
+    for label, body, color in legend:
+        rounded(d, (x, 704, x + 274, 790), WHITE, 14, color, 2)
+        pill(d, x + 14, 718, 82, label, color, PLUM_DARK if color in [ORANGE, CYAN] else WHITE, 9)
+        text(d, (x + 112, 742), body, 10, INK, True)
+        x += 292
+    section(d, 44, 816, 1160, "Decision rule for the next sprint", PLUM_DARK)
+    quote_card(d, 44, 864, 1160, 126, "Promote the Beauty Proof Bridge only if independent respondents and a real instrumented handoff show that proof changes measurable commerce behaviour.", "Core case rule | pilot hypothesis, not current fact", "#20aebd")
+    section(d, 1240, 650, 638, "Open evidence queue", PINK)
+    queue = [
+        ("01", "Creators", "effort, selection, attribution, payout", PINK),
+        ("02", "Shoppers", "confidence, click, purchase, fit regret", "#20aebd"),
+        ("03", "Sellers", "SKU quality, returns, creator ROI", ORANGE),
+        ("04", "Meesho", "PDP / tracking / cohort instrumentation", PLUM),
+    ]
+    y = 706
+    for num, head, body, color in queue:
+        rounded(d, (1240, y, 1878, y + 72), WHITE, 14, color, 2)
+        icon_circle(d, 1256, y + 18, num, color, 34, PLUM_DARK if color == ORANGE else WHITE)
+        text(d, (1306, y + 15), head, 13, PLUM_DARK, True)
+        text(d, (1306, y + 41), body, 10, INK, True)
+        y += 82
+    rounded(d, (1240, 105, 1878, 140), SOFT, 10)
+    text(d, (1559, 122), "12-slide finalist-length submission", 11, PLUM_DARK, True, "mm")
+    footer(d, "Source ledger: DICE_MASTER_DOC.md | DICE_EVIDENCE_DATABASE.md | DICE_GATE1_AUDIT_WORKBOOK.md | DICE_PRIMARY_RESEARCH_TRACKER.md.")
+    return b
+
+
 def render():
-    boards = [board_cover(), board_value_chain(), board_prioritization(), board_quick_win(), board_evidence(), board_creator(), board_competitor(), board_hypothesis(), board_engine(), board_economics(), board_risks()]
+    boards = [board_cover(), board_value_chain(), board_prioritization(), board_quick_win(), board_evidence(), board_creator(), board_competitor(), board_hypothesis(), board_engine(), board_economics(), board_risks(), board_sources()]
     paths = []
     for i, board in enumerate(boards, 1):
         path = OUT / f"slide_{i:02d}.png"
