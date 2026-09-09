@@ -72,6 +72,8 @@ Sources:
 
 ## 3. Hypothesis Scorecard
 
+H0 is an explicit alternative-diagnosis bucket. Keep it active for assortment, quality, pricing, delivery, returns, seller reliability, attribution, platform UX, commission structure, or weak demand in a specific BPC subcategory.
+
 These are provisional priors from public evidence and the case brief. They are not final findings.
 
 Score:
@@ -79,13 +81,14 @@ Score:
 - 3 = plausible
 - 5 = strong
 
-| Hypothesis | Public evidence | Current prior | NMV leverage | Retention leverage | 30-day feasibility | Status |
-| --- | --- | ---: | ---: | ---: | ---: | --- |
-| H1: Creator x SKU mismatch | Creator supply exists, but public program evidence does not show BPC-specific matching | 4 | 5 | 4 | 3 | Investigate first |
-| H2: Sampling friction | Beauty requires credible trial; case explicitly asks about sampling | 3 | 4 | 4 | 5 | Investigate |
-| H3: Content difficulty | Case lists suitability and ingredient problems; beauty proof burden is high | 4 | 5 | 4 | 4 | Investigate first |
-| H4: User proof gap | Case explicitly names first-purchase confidence barriers | 4 | 5 | 3 | 4 | Investigate first |
-| H5: Weak creator economics | Meesho already promotes commissions and analytics, but category-specific economics are unknown | 3 | 4 | 5 | 5 | Investigate |
+| Hypothesis | Public evidence | Desk prior | Indicative funnel impact | Indicative addressability | Status |
+| --- | --- | ---: | ---: | ---: | --- |
+| H1: Creator x SKU mismatch | Creator supply exists, but public program evidence does not show BPC-specific matching | 4 | 5 | 4 | Investigate first |
+| H2: Sampling friction | Beauty requires credible trial; case explicitly asks about sampling | 3 | 4 | 4 | Investigate |
+| H3: Content difficulty | Case lists suitability and ingredient problems; beauty proof burden is high | 4 | 5 | 4 | Investigate first |
+| H4: User proof gap | Case explicitly names first-purchase confidence barriers | 4 | 5 | 4 | Investigate first |
+| H5: Weak creator economics | Meesho already promotes commissions and analytics, but category-specific economics are unknown | 3 | 4 | 5 | Investigate |
+| H0: Alternative diagnosis | An issue outside H1-H5 may explain more leakage | Open | Open | Open | Keep active |
 
 Current provisional ranking:
 1. H1: Creator x SKU mismatch
@@ -95,6 +98,8 @@ Current provisional ranking:
 5. H5: Weak economics
 
 This ranking must change if primary research changes the evidence.
+
+H0 is not ranked yet because its specific diagnosis is not known. If an alternative issue shows higher funnel impact and addressability than H1-H5, it displaces the current ranking.
 
 ### Current kill matrix
 
@@ -249,17 +254,19 @@ The strategic direction remains:
 
 `Creator x SKU x Audience Decision Engine`
 
-The first wedge is not fully locked.
+The first wedge is not fully locked. H0 remains active so research can surface a different, more economically important bottleneck.
 
 However, the strongest current candidate is:
 
 `Beauty Proof with targeted sample allocation`
 
-Why it currently leads:
+Why it currently leads as a desk-research candidate:
 - H1, H3, and H4 can be addressed together.
 - Sampling is used selectively rather than positioned as the product.
 - The system produces structured data for future matching.
 - It is testable without a full machine-learning build.
+
+This is not a primary-research finding and must not be presented as one.
 
 Fallback wedge decisions:
 - If H2 dominates: Smart Sampling first.

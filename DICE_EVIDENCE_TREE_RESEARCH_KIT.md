@@ -38,7 +38,29 @@ Context question:
 
 H1-H5 are possible leakage points in this funnel. They are not mutually exclusive.
 
+H0 is an explicit alternative-diagnosis bucket. It asks whether the dominant leakage is outside the current creator-fit/proof tree, including:
+- assortment or product quality
+- pricing
+- delivery
+- returns
+- seller reliability or authenticity
+- creator attribution
+- platform UX
+- commission structure
+- weak demand in a specific BPC subcategory
+
 ### Branches
+
+### Four matching relationships to test
+
+| Relationship | Research question |
+| --- | --- |
+| Brand -> Creator | Who can credibly sell this SKU? |
+| Creator -> SKU | Which product should this creator promote? |
+| SKU -> Audience | Who is this product actually right for? |
+| Proof -> User decision | Has the shopper seen enough evidence to buy? |
+
+These are separate links in the proposed system. Evidence may support some and reject others.
 
 #### Creator side
 
@@ -109,6 +131,8 @@ Evidence to collect:
 | H4 | Discovery does not reliably become purchase because shoppers lack decision proof | Users report that proof is not important or already sufficient | User interviews/survey, PDP audit, abandonment reasons | Open |
 | H5 | Weak economics dominate creator category choice | Economics clearly ranks above fit, content effort, and proof in behavior | Creator interviews, payout math, time-cost model | Open |
 
+H0: Alternative diagnosis outside H1-H5 explains the largest leakage. Any repeated issue involving assortment, quality, pricing, delivery, returns, seller reliability, attribution, platform UX, commissions, or subcategory demand belongs here until it is named and tested precisely.
+
 ### Desk-research scoreboard
 
 This is a prior based on the case brief and public desk research only.
@@ -138,6 +162,7 @@ The desk score only determines interview order:
 1. H1, H3, and H4 first
 2. H2 and H5 next
 3. N1 as a control comparison
+4. H0 throughout the research so new evidence is not forced into the original tree
 
 The final wedge should be chosen only after primary validation and funnel-impact scoring.
 
@@ -378,6 +403,7 @@ Allowed evidence tags:
 - H4
 - H5
 - N1: generic creator-commerce friction
+- H0: alternative diagnosis
 - NEW: unexpected issue not covered by the initial tree
 
 Allowed polarity tags:
@@ -403,16 +429,31 @@ Score each hypothesis from 1 to 5.
 | --- | --- |
 | Evidence strength | How direct and credible is the evidence? |
 | Frequency | How often does the issue recur independently? |
-| NMV leverage | Could fixing it materially change orders or conversion? |
-| Retention leverage | Could fixing it materially improve creator activity? |
-| Feasibility | Can Meesho test a response within 30 days? |
-| Defensibility | Does the response create compounding advantage? |
+| Funnel impact | Could fixing it materially change NMV, conversion, returns, repeat, or creator activity? |
+| Addressability | Can Meesho materially influence it within 30 days? |
+| Meesho advantage | Does Meesho have a distinctive asset, reach, data, or operating advantage? |
+| Data/moat potential | Will solving it create reusable learning or defensibility? |
 
 Suggested weighted score:
 
-`Priority = 25% evidence strength + 20% frequency + 20% NMV leverage + 15% retention leverage + 10% feasibility + 10% defensibility`
+`Priority = 20% evidence strength + 10% frequency + 25% funnel impact + 20% addressability + 15% Meesho advantage + 10% data/moat potential`
 
 This weighting is a research framework, not a fact. Adjust it only if new evidence makes a different weighting more defensible.
+
+Frequency is a supporting signal, not the decision rule. A lower-frequency issue can win if it has substantially higher funnel impact and addressability.
+
+### Final research scoreboard
+
+| Hypothesis | Evidence | Contradictions | Strength | Funnel impact | Addressability | Meesho advantage | Verdict |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
+| H1: Creator x SKU mismatch | Pending | Pending | - | - | - | - | Open |
+| H2: Sampling friction | Pending | Pending | - | - | - | - | Open |
+| H3: Content difficulty | Pending | Pending | - | - | - | - | Open |
+| H4: User proof gap | Pending | Pending | - | - | - | - | Open |
+| H5: Weak creator economics | Pending | Pending | - | - | - | - | Open |
+| H0: Alternative diagnosis | Pending | Pending | - | - | - | - | Open |
+
+Allowed verdicts: `Keep`, `Secondary`, `Modify`, `Kill`, or `Monitor`.
 
 For primary research, add:
 
@@ -461,6 +502,15 @@ Elevate H5 if:
 - creator economics dominates category choice
 - expected earnings minus effort and trial cost is the main decision rule
 - fit and proof are secondary in repeated behavior
+
+### H0: Alternative diagnosis
+
+Elevate H0 if:
+- a repeated issue outside H1-H5 materially affects purchase, repeat, returns, creator activity, or brand re-spend
+- that issue has higher funnel impact and addressability than the current hypotheses
+- the issue can be named precisely enough to design a 30-day intervention
+
+Do not use H0 as a vague “other” bucket. Record the specific issue, affected funnel node, evidence, contradictions, and proposed test.
 
 ### Strategic-direction kill criterion
 

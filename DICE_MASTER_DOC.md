@@ -36,12 +36,13 @@ Strategic direction: `LOCKED`
 Diagnosis: `PROVISIONAL`
 - Beauty discovery is happening. Confident conversion may be where the value chain breaks.
 
-Hypotheses H1-H5: `UNDER INVESTIGATION`
+Hypotheses H0-H5: `UNDER INVESTIGATION`
 - H1: Creator x SKU mismatch
 - H2: Sampling friction
 - H3: Content difficulty
 - H4: User proof gap
 - H5: Weak creator economics
+- H0: Alternative diagnosis; the current diagnosis may be wrong
 
 Wedge: `PENDING VALIDATION`
 - Beauty Proof
@@ -296,7 +297,18 @@ Creator asks:
 Brand asks:
 - is this creator right for my product
 
-### 4.5 Working thesis
+### 4.5 Four matching relationships to test
+
+| Relationship | Core question |
+| --- | --- |
+| Brand -> Creator | Who can credibly sell this SKU? |
+| Creator -> SKU | Which product should this creator promote? |
+| SKU -> Audience | Who is this product actually right for? |
+| Proof -> User decision | Has the shopper seen enough evidence to buy? |
+
+If research disproves one relationship, narrow the solution instead of defending it by adding features.
+
+### 4.6 Working thesis
 
 `Meesho’s biggest BPC creator-commerce opportunity is to improve creator × SKU × audience matching, and then turn creator proof into a structured decision layer inside commerce surfaces.`
 
@@ -339,8 +351,11 @@ Funnel to investigate:
 | H3: Content difficulty | BPC needs richer explanation than generic affiliate content | High | Structured proof matters |
 | H4: User proof gap | Clicks do not translate because shoppers still lack confidence | High | PDP/storefront proof matters |
 | H5: Weak economics | Creator earnings do not justify BPC effort | Medium-low | Incentive redesign matters |
+| H0: Alternative diagnosis | The dominant leakage sits outside the current H1-H5 tree | Open | Follow the evidence |
 
 ### 5.3 Evidence by hypothesis
+
+H0 is a deliberate alternative-diagnosis bucket, not a residual category. Log repeated issues such as assortment, product quality, pricing, delivery, returns, seller reliability, attribution, platform UX, commission structure, or weak demand in a specific BPC subcategory under H0 when they explain more economic leakage than H1-H5.
 
 #### H1: Creator-SKU mismatch
 
@@ -412,7 +427,41 @@ A possible causal chain is:
 
 Research should test whether this chain exists, rather than forcing H1-H5 into a single winner.
 
-### 5.6 Beauty versus non-beauty comparison
+### 5.6 Economic leakage prioritization
+
+Frequency alone does not determine the winner. A frequently mentioned issue may have low commercial impact, while a less frequent issue may cause large failed trials, returns, or creator drop-off.
+
+Score each candidate from 1 to 5:
+
+| Dimension | Question |
+| --- | --- |
+| Evidence strength | How direct, credible, and triangulated is the evidence? |
+| Frequency | How often does the issue recur independently? |
+| Funnel impact | How much can fixing it change NMV, conversion, returns, repeat, or creator activity? |
+| Addressability | Can Meesho materially influence it within a 30-day pilot? |
+| Meesho advantage | Does Meesho have a distinctive asset, reach, data, or operating advantage? |
+| Data/moat potential | Will solving it create reusable learning or defensibility? |
+
+Use this provisional weighting:
+
+`Priority = 20% evidence strength + 10% frequency + 25% funnel impact + 20% addressability + 15% Meesho advantage + 10% data/moat potential`
+
+This is a decision aid, not a fabricated measurement. Populate it only after evidence is captured, and show contradictions alongside the score.
+
+### 5.7 Final research scoreboard
+
+| Hypothesis | Evidence | Contradictions | Strength | Funnel impact | Addressability | Meesho advantage | Verdict |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
+| H1: Creator x SKU mismatch | Pending | Pending | - | - | - | - | Open |
+| H2: Sampling friction | Pending | Pending | - | - | - | - | Open |
+| H3: Content difficulty | Pending | Pending | - | - | - | - | Open |
+| H4: User proof gap | Pending | Pending | - | - | - | - | Open |
+| H5: Weak creator economics | Pending | Pending | - | - | - | - | Open |
+| H0: Alternative diagnosis | Pending | Pending | - | - | - | - | Open |
+
+Allowed verdicts: `Keep`, `Secondary`, `Modify`, `Kill`, or `Monitor`.
+
+### 5.8 Beauty versus non-beauty comparison
 
 The case asks for beauty and non-beauty creator perspectives.
 
@@ -429,7 +478,7 @@ Use that comparison to isolate what is category-specific:
 
 The difference between the two journeys is more valuable than generic statements that beauty is “trust sensitive.”
 
-### 5.5 Research conclusion
+### 5.9 Research conclusion
 
 The bottleneck is best described as:
 
@@ -442,7 +491,7 @@ This is stronger than saying:
 
 ---
 
-## 6. Locked Winner
+## 6. Strategic Direction and Candidate Wedge
 
 ### 6.1 Strategy
 
@@ -473,6 +522,8 @@ with:
 and:
 
 `targeted sampling` as the activation mechanism
+
+This locks the strategic architecture, not the first 30-day wedge. Beauty Proof with targeted sampling remains the leading desk-research candidate only; the wedge must be selected from the final evidence scoreboard.
 
 This is the best answer because it:
 - solves all three sides
