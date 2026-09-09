@@ -28,6 +28,31 @@ This document is the single source of truth for:
 - impact logic
 - appendix blueprint
 
+## Research Status Gate
+
+Strategic direction: `LOCKED`
+- Creator x SKU x Audience Decision Engine
+
+Diagnosis: `PROVISIONAL`
+- Beauty discovery is happening. Confident conversion may be where the value chain breaks.
+
+Hypotheses H1-H5: `UNDER INVESTIGATION`
+- H1: Creator x SKU mismatch
+- H2: Sampling friction
+- H3: Content difficulty
+- H4: User proof gap
+- H5: Weak creator economics
+
+Wedge: `PENDING VALIDATION`
+- Beauty Proof
+- Smart Sampling
+- Creator Economics
+- or a combination selected by evidence
+
+Final deck: `BLOCKED UNTIL RESEARCH GATE PASSES`
+
+The engine is the strategic architecture. The first 30-day wedge is not locked until primary and secondary research identify the largest controllable bottleneck.
+
 ---
 
 ## 1. What The Case Actually Wants
