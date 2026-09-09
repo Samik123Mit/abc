@@ -109,6 +109,38 @@ Evidence to collect:
 | H4 | Discovery does not reliably become purchase because shoppers lack decision proof | Users report that proof is not important or already sufficient | User interviews/survey, PDP audit, abandonment reasons | Open |
 | H5 | Weak economics dominate creator category choice | Economics clearly ranks above fit, content effort, and proof in behavior | Creator interviews, payout math, time-cost model | Open |
 
+### Desk-research scoreboard
+
+This is a prior based on the case brief and public desk research only.
+
+It is not a finding from interviews or a representative survey.
+
+Scoring:
+- observed strength: 0 to 5
+- 0 means no current support
+- 5 means strong current support
+- primary validation: 0 means not collected yet
+
+| Hypothesis | What would support it? | What would weaken or kill it? | Current observed strength | Primary validation | Current read |
+| --- | --- | --- | ---: | ---: | --- |
+| H1: Creator-SKU mismatch | Creators repeatedly report uncertainty about which SKUs fit their audience; brands lack reliable creator-SKU selection; mismatch appears in failed content or low conversion | Creators confidently choose relevant SKUs and mismatch rarely causes failure | 3/5 | 0/5 | High-priority hypothesis, not a finding |
+| H2: Sampling friction | Creators want to test products but cannot access, afford, or receive relevant samples | Most creators already obtain relevant products easily and access does not affect behavior | 3/5 | 0/5 | Plausible activation barrier |
+| H3: Content difficulty | BPC creators struggle to demonstrate shade, texture, efficacy, or suitability compared with non-BPC creators | Creators report comparable effort and content is already standardized | 4/5 | 0/5 | Strong case-supported hypothesis |
+| H4: User proof gap | Users hesitate because creator content or PDPs do not answer suitability, authenticity, or expected-result questions | Users already receive sufficient proof and proof does not affect decisions | 4/5 | 0/5 | Strong case-supported hypothesis |
+| H5: Creator economics | Earnings, time, trial cost, or attribution are major reasons creators stop promoting BPC | Economics are attractive and inactivity has another dominant cause | 2/5 | 0/5 | Plausible but currently weaker |
+| N1: Generic creator-commerce friction | The same leakage appears in beauty and non-beauty, meaning the problem is not BPC-specific | Non-BPC creators move smoothly while BPC has distinct leakage | 2/5 | 0/5 | Control hypothesis |
+
+### Interpretation rule
+
+Do not select the highest desk score as the winner.
+
+The desk score only determines interview order:
+1. H1, H3, and H4 first
+2. H2 and H5 next
+3. N1 as a control comparison
+
+The final wedge should be chosen only after primary validation and funnel-impact scoring.
+
 ---
 
 ## 3. Research Rules
@@ -339,6 +371,22 @@ Use one row per evidence item:
 | Confidence | Low / medium / high |
 | Action | Keep / modify / deprioritize / kill |
 
+Allowed evidence tags:
+- H1
+- H2
+- H3
+- H4
+- H5
+- N1: generic creator-commerce friction
+- NEW: unexpected issue not covered by the initial tree
+
+Allowed polarity tags:
+- Supports
+- Neutral
+- Contradicts
+
+Do not force an observation into H1-H5 if it clearly indicates a new issue.
+
 Evidence quality rules:
 - one respondent is a signal, not a finding
 - repeated behavior beats stated preference
@@ -365,6 +413,16 @@ Suggested weighted score:
 `Priority = 25% evidence strength + 20% frequency + 20% NMV leverage + 15% retention leverage + 10% feasibility + 10% defensibility`
 
 This weighting is a research framework, not a fact. Adjust it only if new evidence makes a different weighting more defensible.
+
+For primary research, add:
+
+`Observed strength = independent supporting observations / relevant respondents`
+
+Do not report this as a population percentage. Report the denominator and sample type:
+
+`6 of 10 interviewed creators mentioned trial cost as a major barrier.`
+
+That is a sample finding, not a market-wide statistic.
 
 ---
 

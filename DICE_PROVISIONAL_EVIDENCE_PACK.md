@@ -96,6 +96,19 @@ Current provisional ranking:
 
 This ranking must change if primary research changes the evidence.
 
+### Current kill matrix
+
+| Hypothesis | What would support it? | What would weaken or kill it? | Current observed strength | Primary data status |
+| --- | --- | --- | ---: | --- |
+| H1: Creator x SKU mismatch | Creators repeatedly report uncertainty about which SKUs fit their audience; failed promotion examples show relevance mismatch | Creators confidently choose relevant SKUs and mismatch rarely causes failure | 3/5 desk prior | Not collected |
+| H2: Sampling friction | Creators want to test products but cannot access, afford, or receive relevant samples | Most creators already obtain relevant products easily | 3/5 desk prior | Not collected |
+| H3: Content difficulty | BPC creators struggle to demonstrate shade, texture, efficacy, or suitability compared with non-BPC creators | BPC content is no harder and creators already use a standard proof format | 4/5 desk prior | Not collected |
+| H4: User proof gap | Users hesitate because content or PDPs do not answer suitability, authenticity, or expected-result questions | Users already receive sufficient proof and proof does not affect behavior | 4/5 desk prior | Not collected |
+| H5: Creator economics | Earnings, time, trial cost, or attribution dominate the decision to promote BPC | Economics are attractive and another issue explains inactivity | 2/5 desk prior | Not collected |
+| N1: Generic creator-commerce friction | The same leakage appears in beauty and non-beauty | Non-BPC creators move smoothly while BPC has distinct leakage | 2/5 control prior | Not collected |
+
+These scores are research-order priors only. They are not evidence that H3 or H4 is the winner.
+
 ---
 
 ## 4. What Public Evidence Rules Out
