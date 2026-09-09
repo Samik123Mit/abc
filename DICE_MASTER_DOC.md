@@ -53,6 +53,14 @@ Final deck: `BLOCKED UNTIL RESEARCH GATE PASSES`
 
 The engine is the strategic architecture. The first 30-day wedge is not locked until primary and secondary research identify the largest controllable bottleneck.
 
+Current evidence pack:
+- [DICE Provisional Evidence Pack](DICE_PROVISIONAL_EVIDENCE_PACK.md)
+
+Current provisional conclusion:
+- Meesho already has meaningful creator-commerce distribution.
+- The likely opportunity is category-specific creator productivity, proof transfer, and creator x SKU x audience fit.
+- This remains an inference until primary research is collected.
+
 ---
 
 ## 1. What The Case Actually Wants
