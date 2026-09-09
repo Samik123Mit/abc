@@ -12,7 +12,7 @@ from pptx.util import Inches, Pt
 
 ROOT = Path("/workspaces/abc")
 TEMPLATE = ROOT / "DICE Challenge S3  Template for Case studies submission  (Presentation).pptx"
-OUTPUT = ROOT / "DICE Challenge S3 - Diced Cubers Final Submission.pptx"
+OUTPUT = ROOT / "DICE Challenge S3 - Slayed it Final Submission.pptx"
 
 
 PLUM = RGBColor(84, 12, 74)
@@ -158,7 +158,7 @@ def add_footer(slide, text):
 
 
 def decorate_content_slide(slide, title, kicker=None):
-    add_label(slide, Inches(0.62), Inches(0.58), Inches(1.95), "DICED CUBERS | IIT GUWAHATI")
+    add_label(slide, Inches(0.62), Inches(0.58), Inches(2.1), "SLAYED IT | IIT GUWAHATI")
     if kicker:
         add_label(slide, Inches(15.75), Inches(0.58), Inches(2.65), kicker, color=ORANGE)
     add_text(slide, Inches(0.62), Inches(1.1), Inches(11.9), Inches(0.8), title, size=25, bold=True, color=PLUM_DARK, font=FONT_HEAD)
@@ -440,7 +440,7 @@ def build_slide_3(slide):
         Inches(9.09),
         Inches(17.2),
         Inches(0.28),
-        "Samiksha Mitra | Diced Cubers | IIT Guwahati | Proposed thesis: win beauty commerce by turning creator proof into a repeatable acquisition engine.",
+        "Samiksha Mitra | Slayed it | IIT Guwahati | Proposed thesis: win beauty commerce by turning creator proof into a repeatable acquisition engine.",
         size=13,
         color=INK,
         font=FONT_BODY,

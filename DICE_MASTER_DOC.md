@@ -4,7 +4,7 @@
 Build a Round 1 submission that is sharp enough for the mandatory 3-slide format, but backed by a deep appendix and research spine so the team looks more prepared than everyone else.
 
 Team:
-- `Diced Cubers`
+- `Slayed it`
 - `Samiksha Mitra`
 - `IIT Guwahati`
 
