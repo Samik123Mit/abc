@@ -1197,13 +1197,17 @@ def _new_slide_10(slide):
 def build_deck() -> None:
     prs = Presentation(str(TEMPLATE))
     slides = list(prs.slides)
-    builders = [_new_cover, _new_slide_1, _new_slide_2, _new_slide_3, _new_slide_4]
-    for builder, slide in zip(builders, slides):
-        builder(slide)
+    from render_dice_visual_boards import render as render_visual_boards
+
+    board_paths = render_visual_boards()
+    for path, slide in zip(board_paths[:5], slides):
+        _wipe(slide)
+        slide.shapes.add_picture(str(path), 0, 0, width=W, height=H)
     blank_layout = prs.slide_layouts[6]
-    for builder in [_new_slide_5, _new_slide_6, _new_slide_7, _new_slide_8, _new_slide_9, _new_slide_10]:
+    for path in board_paths[5:]:
         slide = prs.slides.add_slide(blank_layout)
-        builder(slide)
+        _wipe(slide)
+        slide.shapes.add_picture(str(path), 0, 0, width=W, height=H)
     prs.save(str(OUTPUT))
 
 
