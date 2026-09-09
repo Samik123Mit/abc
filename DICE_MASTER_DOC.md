@@ -311,6 +311,12 @@ Goal of this phase:
 
 ### 5.1 Research question
 
+Primary question:
+
+`Where does value leak between creator discovery and BPC repeat purchase?`
+
+Context question:
+
 `Why is BPC under-indexed in Meesho creator commerce?`
 
 Not:
@@ -318,7 +324,11 @@ Not:
 
 We already know beauty is trust-sensitive.
 The harder question is:
-- where exactly does the Meesho funnel leak
+- where exactly the economic funnel leaks
+
+Funnel to investigate:
+
+`Brand -> creator selection -> product trial -> content creation -> content distribution -> Meesho click -> PDP consideration -> purchase -> return -> repeat -> creator payout`
 
 ### 5.2 Hypotheses tested
 
@@ -340,7 +350,7 @@ Why this looks real:
 - The case brief itself says BPC is under-indexed in affiliate NMV relative to category demand, which is consistent with a fit problem rather than a raw creator-supply problem.
 
 Assessment:
-- high-confidence candidate bottleneck
+- high-priority hypothesis; requires primary validation
 
 #### H2: Sampling friction
 
@@ -391,6 +401,33 @@ What we should not claim as the main answer:
 
 Those are all partial levers.
 None of them alone resolves the full creator-SKU-audience uncertainty stack.
+
+### 5.5 Possible causal chain
+
+The hypotheses are not mutually exclusive.
+
+A possible causal chain is:
+
+`Wrong creator-SKU match -> creator avoids or weakly tests product -> generic proof content -> shopper uncertainty -> low conversion -> low creator earnings -> creator inactivity`
+
+Research should test whether this chain exists, rather than forcing H1-H5 into a single winner.
+
+### 5.6 Beauty versus non-beauty comparison
+
+The case asks for beauty and non-beauty creator perspectives.
+
+Use that comparison to isolate what is category-specific:
+
+| Funnel stage | Non-beauty baseline | BPC question |
+| --- | --- | --- |
+| Product selection | How are products chosen? | Is audience and suitability fit harder? |
+| Trial | Is personal use required? | Does credible BPC content require actual use? |
+| Content | What proof is needed? | Are shade, skin, hair, ingredient, or result fields required? |
+| Conversion | What blocks purchase? | Are first-purchase doubts stronger? |
+| Returns | What causes mismatch? | Are expectation gaps more costly? |
+| Repeat | What creates another post? | Does repeat depend on product performance and earnings? |
+
+The difference between the two journeys is more valuable than generic statements that beauty is “trust sensitive.”
 
 ### 5.5 Research conclusion
 
@@ -621,6 +658,7 @@ Where uncertainty sits:
 Use a 2x2:
 - X-axis: feasibility / speed to pilot
 - Y-axis: three-sided impact
+- bubble size: data and moat potential
 
 Plot:
 - incentive redesign
@@ -634,6 +672,21 @@ Plot:
 Judge message:
 - we are not choosing the easiest idea
 - we are choosing the smallest system that can improve all three sides and compound over time
+
+Suggested comparison:
+
+| Lever | Impact | Feasibility | Data or moat potential |
+| --- | --- | --- | --- |
+| Commission increase | Medium | High | Low |
+| Broad sampling | Medium | High | Low |
+| PDP proof only | High | Medium | Medium |
+| Creator-SKU matching | High | Medium | High |
+| Structured Beauty Proof | High | High | High |
+| Full Decision Engine | Very high | Low initially | Very high |
+
+The intended argument:
+
+`Do not launch the full engine on Day 1. Launch the smallest feasible wedge that generates the data required to build it.`
 
 Priority stack:
 1. Structured beauty proof + first-pass matching
@@ -689,7 +742,56 @@ Avoid:
 
 ---
 
-## 12. 30-60-90 Day Roadmap
+## 12. Primary Research Design
+
+Primary research should reveal the leakage, not validate the proposed solution.
+
+### Creator sample
+
+- 7 to 10 Meesho beauty and non-beauty creators
+- separate activated creators from power creators
+- include multiple languages or smaller-city audiences where possible
+
+Map each answer to:
+- H1: fit and product selection
+- H2: trial and sampling friction
+- H3: content effort and proof burden
+- H5: earnings, time, attribution, and risk
+
+### User sample
+
+- target 100+ responses if distribution is realistic
+- use behavior-based questions about the last online beauty purchase
+- map to H4: discovery, consideration, confidence, purchase, return, repeat
+
+### Brand or seller sample
+
+- target 3 to 5 BPC sellers, brands, or agency practitioners
+- map to H1: creator selection and SKU fit
+- map to attribution and H5: ROI, payout, repeat, and budget re-spend
+
+### Coding model
+
+Record one row per respondent and one row per evidence item.
+
+Minimum fields:
+- respondent code
+- creator type or user cohort
+- beauty versus non-beauty
+- funnel stage
+- H1-H5 tags
+- exact behavior or quote
+- frequency
+- NMV relevance
+- retention relevance
+- confidence
+- action
+
+Do not convert a single quote into a market-wide claim.
+
+---
+
+## 13. 30-60-90 Day Roadmap
 
 ### 0-30 days
 - shortlist target BPC subcategories
@@ -713,7 +815,7 @@ Important note:
 
 ---
 
-## 13. Appendix Strategy
+## 14. Appendix Strategy
 
 Core deck should end after the 3-slide answer.
 Everything else becomes a force-multiplying appendix.
@@ -741,7 +843,7 @@ Optional boosters:
 
 ---
 
-## 14. PPT Construction Rules To Follow
+## 15. PPT Construction Rules To Follow
 
 The deck should feel like a finalist consulting deck.
 
@@ -765,7 +867,7 @@ Visual cues from uploaded winners:
 
 ---
 
-## 15. Risks And How To Handle Them In Q&A
+## 16. Risks And How To Handle Them In Q&A
 
 ### Risk: “Why not just raise commissions?”
 
@@ -795,7 +897,7 @@ Answer:
 
 ---
 
-## 16. What We Can Honestly Claim
+## 17. What We Can Honestly Claim
 
 We can claim:
 - India BPC is large and growing
@@ -814,7 +916,7 @@ We should avoid claiming:
 
 ---
 
-## 17. Suggested Final 3-Slide Story
+## 18. Suggested Final 3-Slide Story
 
 ### Slide 1
 Title:
@@ -849,7 +951,7 @@ Content:
 
 ---
 
-## 18. Suggested Appendix Order
+## 19. Suggested Appendix Order
 
 1. Executive summary expanded
 2. BPC market context
@@ -867,7 +969,7 @@ Content:
 
 ---
 
-## 19. Source Log
+## 20. Source Log
 
 Primary case source:
 - `DICE Challenge S3  CC Case studies.pdf`
@@ -895,7 +997,7 @@ External references:
 
 ---
 
-## 20. Final Recommendation
+## 21. Final Recommendation
 
 Do not position the answer as:
 - a sampling program

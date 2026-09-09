@@ -26,7 +26,17 @@ Do not build the final PPT until the research gate is complete.
 
 ### Root question
 
+`Where does value leak between creator discovery and BPC repeat purchase?`
+
+Context question:
+
 `Why is BPC under-indexed in Meesho creator commerce relative to category demand?`
+
+### Funnel to map
+
+`Brand -> creator selection -> product trial -> content creation -> content distribution -> Meesho click -> PDP consideration -> purchase -> return -> repeat -> creator payout`
+
+H1-H5 are possible leakage points in this funnel. They are not mutually exclusive.
 
 ### Branches
 
