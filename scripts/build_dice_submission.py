@@ -621,6 +621,40 @@ def build_slide_9(slide):
     footer(slide, "Team: Samiksha Mitra | Slayed it | IIT Guwahati | Sources and limitations documented in the research workspace.")
 
 
+def add_hyperlink_hotspot(slide, x, y, w, h, url):
+    shape = slide.shapes.add_shape(MSO_AUTO_SHAPE_TYPE.RECTANGLE, x, y, w, h)
+    fill_shape(shape, WHITE, transparency=1.0)
+    shape.line.fill.background()
+    shape.click_action.hyperlink.address = url
+    return shape
+
+
+def add_source_hotspots(slide, slide_number):
+    sources = {
+        2: [
+            (Inches(0.45), Inches(10.50), Inches(7.0), Inches(0.45), "https://www.youtube.com/"),
+        ],
+        3: [
+            (Inches(14.10), Inches(2.65), Inches(4.70), Inches(0.55), "https://support.google.com/youtube/answer/13376398"),
+            (Inches(14.10), Inches(8.25), Inches(4.70), Inches(0.70), "https://affiliate-program.amazon.in/"),
+        ],
+        4: [
+            (Inches(0.45), Inches(10.50), Inches(8.0), Inches(0.45), "https://www.nykaa.com/"),
+        ],
+        7: [
+            (Inches(0.45), Inches(2.70), Inches(19.0), Inches(0.78), "https://affiliate-program.amazon.in/"),
+            (Inches(0.45), Inches(3.55), Inches(19.0), Inches(0.78), "https://affiliate.nykaa.com/"),
+            (Inches(0.45), Inches(4.40), Inches(19.0), Inches(0.78), "https://affiliate.flipkart.com/"),
+            (Inches(0.45), Inches(5.25), Inches(19.0), Inches(0.78), "https://www.myntra.com/"),
+        ],
+        12: [
+            (Inches(0.45), Inches(10.50), Inches(19.0), Inches(0.45), "https://github.com/Samik123Mit/abc"),
+        ],
+    }
+    for x, y, w, h, url in sources.get(slide_number, []):
+        add_hyperlink_hotspot(slide, x, y, w, h, url)
+
+
 def build_deck() -> None:
     prs = Presentation(str(TEMPLATE))
     # Preserve the required template cover and content-slide structure.
@@ -1200,14 +1234,16 @@ def build_deck() -> None:
     from render_dice_visual_boards import render as render_visual_boards
 
     board_paths = render_visual_boards()
-    for path, slide in zip(board_paths[:5], slides):
+    for index, (path, slide) in enumerate(zip(board_paths[:5], slides), 1):
         _wipe(slide)
         slide.shapes.add_picture(str(path), 0, 0, width=W, height=H)
+        add_source_hotspots(slide, index)
     blank_layout = prs.slide_layouts[6]
-    for path in board_paths[5:]:
+    for index, path in enumerate(board_paths[5:], 6):
         slide = prs.slides.add_slide(blank_layout)
         _wipe(slide)
         slide.shapes.add_picture(str(path), 0, 0, width=W, height=H)
+        add_source_hotspots(slide, index)
     prs.save(str(OUTPUT))
 
 
