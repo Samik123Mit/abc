@@ -905,7 +905,7 @@ def board_cover():
 def board_value_chain():
     b = new_board(CREAM)
     d = ImageDraw.Draw(b)
-    logo_header(d, "The research does not show a proof shortage. It shows a broken proof-to-commerce handoff.", "ROUND 1 | EVIDENCE EXHIBIT")
+    logo_header(d, "Proof exists. The handoff breaks before commerce.", "ROUND 1 | EVIDENCE EXHIBIT")
     text(d, (44, 116), "A dense evidence map of what creators already do, what Meesho can observe, and where the value chain becomes unmeasurable.", 16, MUTED)
     methodology_band(d, 44, 150, 1834)
     tiles = [
@@ -981,7 +981,7 @@ def board_value_chain():
         text(d, (x + 16, 874), head, 13, color, True)
         text(d, (x + 16, 908), body, 12, INK, True)
         x += 510
-    footer(d, "Sources: Team creator-content audit CCA-001–030; M-CAT-001; M-PDP-001; Stream C evidence ledger. Counts are descriptive, not nationally representative.")
+    footer(d, "Sources ↗ Team creator-content audit CCA-001–030 | M-CAT-001 | M-PDP-001 | Stream C evidence ledger. Counts are descriptive.")
     return b
 
 
@@ -1080,13 +1080,26 @@ def board_prioritization():
 def board_quick_win():
     b = new_board(CREAM)
     d = ImageDraw.Draw(b)
-    logo_header(d, "Meet the product: Meesho Beauty Decision Engine.", "ROUND 1 | SOLUTION BLUEPRINT")
-    text(d, (44, 116), "Right creator x right SKU x right audience -> decision-grade discovery -> measurable commerce.", 17, MUTED)
-    methodology_band(d, 44, 150, 1834)
+    logo_header(d, "Slayed It turns creator proof into a learning commerce loop.", "ROUND 1 | SOLUTION BLUEPRINT")
+    text(d, (44, 116), "Right creator x right SKU x right audience -> targeted proof -> measurable commerce -> the next better match.", 17, MUTED)
+    # Compact evidence band: reference-style density without turning the slide into prose.
+    evidence_row = [
+        ("28", "accessible creator audits", "TEAM AUDIT", PINK),
+        ("26/28", "product demonstrations", "OBSERVED", PLUM),
+        ("24/28", "suitability discussions", "OBSERVED", CYAN),
+        ("0/28", "sampled Meesho CTA destinations", "DIRECTIONAL", ORANGE),
+    ]
+    x = 44
+    for value, label, tag, color in evidence_row:
+        rounded(d, (x, 150, x + 442, 202), WHITE, 9, color, 2)
+        text(d, (x + 14, 160), value, 23, color, True)
+        text(d, (x + 112, 162), label.upper(), 10, PLUM_DARK, True)
+        text(d, (x + 428, 184), tag, 8, color, True, "ra")
+        x += 466
     rounded(d, (44, 220, 1878, 302), PLUM_DARK, 18)
     text(d, (961, 261), "RIGHT CREATOR  x  RIGHT SKU  x  RIGHT AUDIENCE  =  DECISION-GRADE DISCOVERY -> MEASURABLE COMMERCE", 23, WHITE, True, "mm")
     section(d, 44, 334, 1240, "Core system | a marketplace decision engine, not an influencer campaign")
-    section(d, 1310, 334, 568, "Why this is different", ORANGE)
+    section(d, 1310, 334, 568, "Product moment | proposed internal tool", ORANGE)
     # Left engine
     rounded(d, (44, 390, 1284, 842), WHITE, 18, PLUM, 3)
     # Inputs
@@ -1123,20 +1136,43 @@ def board_quick_win():
         rounded(d, (xx, 770, xx + 250, 852), WHITE, 12, color, 2)
         pill(d, xx + 14, 784, 92, head, color, PLUM_DARK if color in [ORANGE, CYAN, OLIVE] else WHITE, 8)
         text(d, (xx + 14, 818), body, 11, INK, True)
-    # Right comparison
-    rounded(d, (1310, 390, 1878, 540), PALE, 12, GRID, 1)
-    text(d, (1332, 408), "CURRENT CREATOR COMMERCE", 11, MUTED, True)
-    text(d, (1332, 444), "Creator -> content -> link -> purchase", 13, INK, True)
-    text(d, (1332, 474), "Learning: limited", 12, PINK, True)
-    rounded(d, (1310, 562, 1878, 744), PLUM_DARK, 14)
-    text(d, (1332, 582), "OUR MEESHO MODEL", 12, ORANGE, True)
-    text(d, (1332, 620), "Creator x SKU x Audience", 18, WHITE, True)
-    text(d, (1332, 654), "-> targeted sample", 13, WHITE, True)
-    text(d, (1332, 682), "-> proof surface -> order", 13, WHITE, True)
-    text(d, (1332, 710), "-> feedback -> next match", 13, CYAN, True)
-    rounded(d, (1310, 766, 1878, 842), SOFT, 12)
-    text(d, (1332, 785), "MEESHO MOAT", 11, PLUM_DARK, True)
-    text(d, (1332, 813), "More interactions -> more data -> better fit", 12, INK, True)
+    # Right product UI mockup. All values are explicitly illustrative, not observed.
+    rounded(d, (1310, 390, 1878, 842), WHITE, 14, PLUM, 2)
+    rounded(d, (1310, 390, 1878, 440), PLUM_DARK, 14)
+    d.rectangle((1310, 420, 1878, 440), fill=PLUM_DARK)
+    text(d, (1332, 408), "meesho. SLAYED IT", 14, WHITE, True)
+    text(d, (1854, 408), "ILLUSTRATIVE", 9, ORANGE, True, "ra")
+    text(d, (1332, 460), "CREATOR COMMERCE DECISION ENGINE", 9, PINK, True)
+    # Match inputs
+    ui_fields = [
+        ("AUDIENCE", "Dry / sensitive skin", CYAN),
+        ("CREATOR", "Aarohi | dry-skin specialist", PINK),
+        ("SKU", "Hydrating skin tint | INR 399", ORANGE),
+    ]
+    y = 488
+    for label, value, color in ui_fields:
+        rounded(d, (1332, y, 1660, y + 48), CREAM, 8, color, 1)
+        text(d, (1344, y + 8), label, 8, color, True)
+        text(d, (1344, y + 25), value, 10, INK, True)
+        y += 58
+    rounded(d, (1680, 488, 1854, 164 + 488), LILAC, 10, PINK, 2)
+    text(d, (1767, 508), "MATCH", 9, PINK, True, "mm")
+    text(d, (1767, 532), "92", 35, PLUM_DARK, True, "mm")
+    text(d, (1767, 568), "/ 100", 9, MUTED, True, "mm")
+    # Why-match mini-bars
+    text(d, (1332, 670), "WHY THIS MATCH?", 9, PLUM_DARK, True)
+    reasons = [("audience fit", .94, CYAN), ("proof depth", .91, PINK), ("SKU suitability", .89, ORANGE), ("commerce fit", .84, PLUM)]
+    y = 694
+    for label, level, color in reasons:
+        text(d, (1332, y), label, 9, INK, True)
+        tiny_bar(d, 1470, y + 2, 145, level, color, h=8)
+        text(d, (1630, y), f"{int(level*100)}%", 9, color, True)
+        y += 27
+    rounded(d, (1680, 650, 1854, 724), PINK, 10)
+    text(d, (1767, 668), "NEXT ACTION", 8, WHITE, True, "mm")
+    text(d, (1767, 697), "TARGETED SAMPLE", 10, WHITE, True, "mm")
+    rounded(d, (1332, 818, 1854, 830), SOFT, 6)
+    text(d, (1593, 824), "Brief: show texture • state who should avoid • compare finish • add Meesho CTA", 8, PLUM_DARK, True, "mm")
     section(d, 44, 862, 1240, "30-day launch spine | a killable wedge", ORANGE)
     weeks = [("W1", "10–20 SKUs\nfit criteria", ORANGE), ("W2", "creator match\nsample + log", PINK), ("W3", "proof + surface\nIDs + CTA", CYAN), ("W4", "orders + returns\nscale / kill", OLIVE)]
     x = 44
@@ -1254,60 +1290,128 @@ def board_creator():
 
 
 def board_competitor():
-    b, d = board_appendix("Competitors expose the bridge from content to learning.", "APPENDIX | STREAM C | CAPABILITY BENCHMARK", "The corrected audit distinguishes one public-source capability record, three public artifacts and two pending flows. Private dashboards remain unverified.")
-    section(d, 44, 158, 1834, "Benchmark grid | public evidence, not invented end-to-end verification")
-    headers = ["PLATFORM", "DISCOVERY", "SKU / INFO", "PROOF", "SHOPPING", "ATTRIB.", "EARNINGS", "STATUS"]
-    widths = [250, 215, 215, 215, 215, 215, 215, 258]
+    b, d = board_appendix(
+        "Competitors expose the bridge from content to learning.",
+        "APPENDIX | STREAM C | CAPABILITY BENCHMARK",
+        "The corrected audit distinguishes one public-source capability record, three public artifacts and two pending flows. Private dashboards remain unverified.",
+    )
+    section(d, 44, 158, 1834, "Benchmark grid | what is public, what is authenticated, what remains unverified")
+    headers = ["PLATFORM", "DISCOVERY", "SKU / INFO", "PROOF", "SHOPPING", "ATTRIB.", "EARNINGS", "WORKSPACE RECORD"]
+    widths = [250, 205, 205, 205, 205, 205, 205, 354]
     x = 44
     for h, w in zip(headers, widths):
         rounded(d, (x, 216, x + w, 258), PLUM_DARK, 0)
-        text(d, (x + w // 2, 237), h, 10, WHITE, True, "mm")
+        text(d, (x + w // 2, 237), h, 9.5, WHITE, True, "mm")
         x += w
     rows = [
-        ("YouTube Shopping", ["PUBLIC", "PUBLIC", "PUBLIC", "PUBLIC", "PRIVATE", "PRIVATE"], "COMP-FLOW-001 | capability", PLUM),
-        ("Amazon India", ["PUBLIC", "PUBLIC", "PUBLIC", "PUBLIC", "PRIVATE", "PRIVATE"], "public program artifact", ORANGE),
-        ("Nykaa Affiliate", ["PUBLIC", "PUBLIC", "PUBLIC", "PUBLIC", "PRIVATE", "PRIVATE"], "public program artifact", CYAN),
-        ("Flipkart Affiliate", ["PUBLIC", "PUBLIC", "PUBLIC", "PUBLIC", "PRIVATE", "PRIVATE"], "public partner artifact", PINK),
-        ("Myntra Glam Clan", ["PUBLIC", "PUBLIC", "PUBLIC", "PUBLIC", "PRIVATE", "PRIVATE"], "public program artifact", OLIVE),
-        ("Meesho", ["UNKNOWN", "UNKNOWN", "UNKNOWN", "UNKNOWN", "UNKNOWN", "UNKNOWN"], "gap to test", PLUM_DARK),
+        ("YouTube Shopping", ["PUBLIC", "PUBLIC", "PUBLIC", "PUBLIC", "PRIVATE", "PRIVATE"], "COMP-FLOW-001\n1 capability record", PLUM),
+        ("Amazon India", ["PUBLIC", "PUBLIC", "PUBLIC", "PUBLIC", "PRIVATE", "PRIVATE"], "COMP-003\npublic program artifact", ORANGE),
+        ("Nykaa Affiliate", ["PUBLIC", "PUBLIC", "PUBLIC", "PUBLIC", "PRIVATE", "PRIVATE"], "COMP-002\npublic program artifact", CYAN),
+        ("Flipkart Affiliate", ["PUBLIC", "PUBLIC", "PUBLIC", "PUBLIC", "PRIVATE", "PRIVATE"], "COMP-003\npublic partner artifact", PINK),
+        ("Myntra Glam Clan", ["PUBLIC", "PUBLIC", "PUBLIC", "PUBLIC", "PRIVATE", "PRIVATE"], "COMP-001\npublic program artifact", OLIVE),
+        ("Meesho", ["UNKNOWN", "UNKNOWN", "UNKNOWN", "UNKNOWN", "UNKNOWN", "UNKNOWN"], "Target to test\nnot evidenced", PLUM_DARK),
     ]
     y = 270
     for name, statuses, status, color in rows:
         x = 44
-        rounded(d, (x, y, x + widths[0], y + 74), WHITE, 0, color, 2)
-        text(d, (x + 14, y + 37), name, 13, PLUM_DARK, True, "lm")
+        platform_fill = LILAC if name != "Meesho" else SOFT
+        rounded(d, (x, y, x + widths[0], y + 74), platform_fill, 0, color, 2)
+        d.rectangle((x, y, x + 10, y + 74), fill=color)
+        text(d, (x + 22, y + 37), name, 12.5, PLUM_DARK, True, "lm")
         x += widths[0]
         for st, w in zip(statuses, widths[1:-1]):
             fill = CYAN if st == "PUBLIC" else SOFT if st == "PRIVATE" else WHITE
             rounded(d, (x, y, x + w, y + 74), fill, 0, GRID, 1)
-            pill(d, x + 58, y + 22, 96, "P" if st == "PUBLIC" else "AUTH" if st == "PRIVATE" else "?", CYAN if st == "PUBLIC" else ORANGE if st == "PRIVATE" else PINK, PLUM_DARK if st in ["PRIVATE"] else WHITE, 9)
+            label = "PUBLIC" if st == "PUBLIC" else "AUTH" if st == "PRIVATE" else "OPEN"
+            pill(
+                d,
+                x + 38,
+                y + 22,
+                w - 76,
+                label,
+                CYAN if st == "PUBLIC" else ORANGE if st == "PRIVATE" else PINK,
+                PLUM_DARK if st in ["PUBLIC", "PRIVATE"] else WHITE,
+                8,
+            )
             x += w
-        rounded(d, (x, y, x + widths[-1], y + 74), WHITE, 0, color, 1)
-        text(d, (x + 12, y + 37), status, 10, color, True, "lm")
+        record_fill = LILAC if color in [PLUM, PLUM_DARK] else SOFT if color in [ORANGE, OLIVE] else CYAN
+        rounded(d, (x, y, x + widths[-1], y + 74), record_fill, 0, color, 1)
+        record_color = PLUM_DARK if color in [CYAN, ORANGE, OLIVE] else color
+        text(d, (x + 14, y + 12), status, 9.8, record_color, True)
         y += 82
-    section(d, 44, 792, 870, "What the public artifacts support", CYAN)
-    section(d, 944, 792, 934, "What remains private / pending", PINK)
-    left = [
-        "Creator discovery and product-tagging capability exists in public documentation.",
-        "Shoppable surfaces and retailer deep links are visible as ecosystem patterns.",
-        "The benchmark validates the shape of the bridge, not Meesho conversion.",
+
+    section(d, 44, 792, 590, "How to read the grid", ORANGE)
+    legend = [
+        ("PUBLIC", "official page or program artifact", CYAN),
+        ("AUTH", "private dashboard / login required", ORANGE),
+        ("OPEN", "not evidenced in workspace", PINK),
     ]
-    right = [
-        "Commission rates, cookies, dashboards and earnings require authenticated access.",
-        "No five-flow independent replay is claimed in the evidence ledger.",
-        "Meesho's own creator-to-SKU transaction bridge remains a research gap.",
+    x = 56
+    for label, body, color in legend:
+        rounded(d, (x, 842, x + 176, 930), WHITE, 12, color, 2)
+        pill(d, x + 12, 854, 72, label, color, PLUM_DARK if color in [CYAN, ORANGE] else WHITE, 8)
+        paragraph(d, (x + 12, 889), body, 152, 10.5, INK, True, 2)
+        x += 190
+
+    section(d, 662, 792, 590, "Evidence count | Stream C", PLUM_DARK)
+    counts = [("1", "public-source capability", PLUM), ("3", "public artifacts", ORANGE), ("2", "pending records", PINK)]
+    x = 674
+    for value, label, color in counts:
+        rounded(d, (x, 842, x + 174, 930), WHITE, 12, color, 2)
+        text(d, (x + 14, 858), value, 27, color, True)
+        paragraph(d, (x + 14, 898), label, 146, 10.5, PLUM_DARK, True, 2)
+        x += 190
+
+    section(d, 1280, 792, 598, "Benchmark implication", PINK)
+    rounded(d, (1292, 842, 1878, 930), PLUM_DARK, 12)
+    paragraph(
+        d,
+        (1310, 859),
+        "The benchmark validates the shape of the bridge, not Meesho conversion. Build one measurable proof-to-commerce handoff, then learn.",
+        550,
+        13,
+        WHITE,
+        True,
+        3,
+    )
+    footer(d, "Clickable platform sources ↗ YouTube Shopping | Amazon | Nykaa | Flipkart | Myntra. Stream C: 1 capability + 3 artifacts + 2 pending.")
+    return b
+
+
+def board_close():
+    b = new_board(PLUM_DARK)
+    d = ImageDraw.Draw(b)
+    draw = ImageDraw.Draw(b, "RGBA")
+    draw.rectangle((0, 0, W, H), fill=(71, 0, 57, 255))
+    draw.ellipse((1120, -180, 2050, 740), fill=(130, 20, 100, 130))
+    draw.ellipse((1310, 260, 1930, 900), outline=(255, 157, 0, 150), width=6)
+    draw.ellipse((1410, 360, 1830, 780), outline=(240, 90, 121, 150), width=5)
+    text(d, (88, 92), "MEESHO DICE CHALLENGE | S3", 15, ORANGE, True)
+    text(d, (88, 198), "The case in one line:", 22, CREAM, True)
+    text(d, (88, 252), "Proof already exists.", 51, WHITE, True)
+    text(d, (88, 314), "Now measure the handoff.", 51, WHITE, True)
+    rounded(d, (88, 450, 1010, 710), SOFT, 22)
+    text(d, (126, 486), "THE PROPOSED WEDGE", 14, PINK, True)
+    text(d, (126, 536), "Beauty Proof Bridge", 36, PLUM_DARK, True)
+    text(d, (126, 598), "Creator × SKU × Audience", 24, PLUM_DARK, True)
+    text(d, (126, 640), "MATCH → SAMPLE → CREATE → SURFACE → MEASURE → LEARN", 14, PLUM_DARK, True)
+    text(d, (88, 832), "Thank you", 33, WHITE, True)
+    text(d, (88, 886), "Appendix follows: evidence, benchmark, hypothesis ledger, pilot model and source links.", 17, CREAM, True)
+    text(d, (88, 1004), "Team Slayed it | Samiksha Mitra | IIT Guwahati | 09 September 2026", 12, CREAM)
+    rounded(d, (1210, 152, 1790, 818), WHITE, 24)
+    text(d, (1500, 205), "THE JUDGE SHOULD REMEMBER", 14, PINK, True, "mm")
+    statements = [
+        ("01", "Creators can already make useful beauty proof.", PINK),
+        ("02", "The measurable leak is the handoff into commerce.", CYAN),
+        ("03", "The pilot earns the right to build the engine.", ORANGE),
     ]
-    y = 842
-    for item in left:
-        pill(d, 58, y, 28, ">", CYAN, PLUM_DARK, 12)
-        text(d, (104, y + 10), item, 12, INK, True)
-        y += 43
-    y = 842
-    for item in right:
-        pill(d, 958, y, 28, "?", PINK, WHITE, 12)
-        text(d, (1004, y + 10), item, 12, INK, True)
-        y += 43
-    footer(d, "Stream C status: 1 public-source capability record + 3 public artifacts + 2 pending. Source family: COMP-FLOW-001–005.")
+    y = 300
+    for num, value, color in statements:
+        icon_circle(d, 1260, y, num, color, 42, PLUM_DARK if color in [CYAN, ORANGE] else WHITE)
+        paragraph(d, (1324, y + 2), value, 390, 16, INK, True, 4)
+        y += 142
+    rounded(d, (1252, 682, 1748, 760), PLUM_DARK, 14)
+    text(d, (1500, 721), "EVIDENCE → INSIGHT → PILOT", 15, WHITE, True, "mm")
     return b
 
 
@@ -1371,7 +1475,7 @@ def board_engine():
         ("CREATOR\nattributes", 960, 230, PINK),
         ("SKU\nattributes", 1275, 360, ORANGE),
         ("CONTENT\nengagement", 1275, 720, CYAN),
-        ("ORDERS /\nRETURNS", 960, 870, OLIVE),
+        ("ORDERS /\nRETURNS", 960, 826, OLIVE),
         ("AUDIENCE\nattributes", 645, 720, PLUM),
         ("CLICKS /\nPDP", 645, 360, PINK),
     ]
@@ -1379,7 +1483,7 @@ def board_engine():
         rounded(d, (x - 108, y - 38, x + 108, y + 38), WHITE, 14, color, 3)
         text(d, (x, y), label, 12, PLUM_DARK, True, "mm")
     # arrows around ring
-    for a, b2 in [((960, 270), (1190, 350)), ((1270, 400), (1270, 675)), ((1190, 770), (1000, 850)), ((920, 850), (700, 770)), ((650, 675), (650, 400)), ((730, 350), (920, 270))]:
+    for a, b2 in [((960, 270), (1190, 350)), ((1270, 400), (1270, 675)), ((1190, 770), (1000, 806)), ((920, 806), (700, 770)), ((650, 675), (650, 400)), ((730, 350), (920, 270))]:
         d.line((*a, *b2), fill=PINK, width=4)
     rounded(d, (44, 250, 390, 842), WHITE, 14, ORANGE, 2)
     text(d, (66, 278), "INPUT SIGNALS", 14, ORANGE, True)
@@ -1438,6 +1542,17 @@ def board_economics():
     rounded(d, (44, 846, 1878, 954), SOFT, 14)
     text(d, (66, 875), "NO INVENTED UPLIFT", 12, PINK, True)
     text(d, (270, 875), "Pilot metrics are targets / assumptions until the treatment and control produce observed deltas.", 15, INK, True)
+    economics_checks = [
+        ("TARGET", "creator / SKU / audience / treatment IDs", CYAN),
+        ("CONTROL", "current handoff versus structured proof", PINK),
+        ("GAP", "no observed Meesho conversion or repeat yet", ORANGE),
+    ]
+    x = 270
+    for head, body, color in economics_checks:
+        rounded(d, (x, 900, x + 500, 938), WHITE, 8, color, 1)
+        pill(d, x + 10, 906, 72, head, color, PLUM_DARK if color == ORANGE else WHITE, 8)
+        text(d, (x + 94, 912), body, 10, INK, True)
+        x += 520
     footer(d, "Illustrative measurement model only. No conversion, NMV, repeat or retention result is claimed.")
     return b
 
@@ -1524,21 +1639,44 @@ def board_sources():
     section(d, 44, 836, 1160, "Promotion rule", PLUM_DARK)
     rounded(d, (44, 890, 1204, 992), SOFT, 12)
     paragraph(d, (68, 918), "Promote only when respondents + an instrumented handoff show measurable behaviour change.", 1080, 16, PLUM_DARK, True, 4)
-    section(d, 1240, 676, 638, "Open evidence queue", PINK)
-    queue = [("CREATORS", "selection, effort, attribution, payout", PINK), ("SHOPPERS", "confidence, click, purchase, fit regret", CYAN), ("SELLERS", "SKU quality, returns, creator ROI", ORANGE), ("MEESHO", "PDP, tracking, cohort instrumentation", PLUM)]
-    y = 730
-    for i, (head, body, color) in enumerate(queue, 1):
-        rounded(d, (1240, y, 1878, y + 58), WHITE, 10, color, 2)
-        icon_circle(d, 1254, y + 13, str(i), color, 32, PLUM_DARK if color == ORANGE else WHITE)
-        text(d, (1304, y + 12), head, 12, PLUM_DARK, True)
-        text(d, (1304, y + 34), body, 10, INK, True)
-        y += 68
-    footer(d, "Source files: DICE_MASTER_DOC.md | DICE_EVIDENCE_DATABASE.md | DICE_GATE1_AUDIT_WORKBOOK.md | DICE_PRIMARY_RESEARCH_TRACKER.md.")
+    section(d, 1240, 676, 638, "Clickable source index", PINK)
+    queue = [
+        ("GITHUB", "full evidence ledger + research files", PLUM),
+        ("YOUTUBE", "official Shopping capability guide", CYAN),
+        ("AMAZON", "India affiliate program artifact", ORANGE),
+        ("NYKAA", "affiliate program artifact", PINK),
+        ("FLIPKART", "affiliate program artifact", ORANGE),
+        ("MYNTRA", "public creator-program source", PLUM),
+    ]
+    for i, (head, body, color) in enumerate(queue):
+        col = i % 2
+        row = i // 2
+        x = 1240 + col * 319
+        y = 730 + row * 68
+        rounded(d, (x, y, x + 300, y + 58), WHITE, 10, color, 2)
+        icon_circle(d, x + 12, y + 13, "↗", color, 32, PLUM_DARK if color == ORANGE else WHITE)
+        text(d, (x + 62, y + 12), head, 11, PLUM_DARK, True)
+        text(d, (x + 62, y + 34), body, 8.7, INK, True)
+    footer(d, "Clickable source index ↗ | GitHub evidence files | YouTube Shopping | Amazon | Nykaa | Flipkart | Myntra. Evidence IDs remain in the ledger.")
     return b
 
 
 def render():
-    boards = [board_cover(), board_value_chain(), board_prioritization(), board_quick_win(), board_evidence(), board_creator(), board_competitor(), board_hypothesis(), board_engine(), board_economics(), board_risks(), board_sources()]
+    boards = [
+        board_cover(),
+        board_value_chain(),
+        board_prioritization(),
+        board_quick_win(),
+        board_close(),
+        board_evidence(),
+        board_creator(),
+        board_competitor(),
+        board_hypothesis(),
+        board_engine(),
+        board_economics(),
+        board_risks(),
+        board_sources(),
+    ]
     paths = []
     for i, board in enumerate(boards, 1):
         path = OUT / f"slide_{i:02d}.png"

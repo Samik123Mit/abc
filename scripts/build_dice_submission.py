@@ -632,23 +632,50 @@ def add_hyperlink_hotspot(slide, x, y, w, h, url):
 def add_source_hotspots(slide, slide_number):
     sources = {
         2: [
-            (Inches(0.45), Inches(10.50), Inches(7.0), Inches(0.45), "https://www.youtube.com/"),
+            (Inches(0.45), Inches(10.50), Inches(7.0), Inches(0.45), "https://support.google.com/youtube/answer/13376398"),
         ],
         3: [
             (Inches(14.10), Inches(2.65), Inches(4.70), Inches(0.55), "https://support.google.com/youtube/answer/13376398"),
             (Inches(14.10), Inches(8.25), Inches(4.70), Inches(0.70), "https://affiliate-program.amazon.in/"),
         ],
         4: [
-            (Inches(0.45), Inches(10.50), Inches(8.0), Inches(0.45), "https://www.nykaa.com/"),
+            (Inches(0.45), Inches(10.50), Inches(8.0), Inches(0.45), "https://github.com/Samik123Mit/abc"),
+        ],
+        6: [
+            (Inches(0.45), Inches(10.50), Inches(10.0), Inches(0.45), "https://github.com/Samik123Mit/abc/blob/main/DICE_EVIDENCE_DATABASE.md"),
+            (Inches(0.45), Inches(4.10), Inches(12.5), Inches(0.75), "https://www.meesho.com/beauty-products/pl/9on"),
         ],
         7: [
-            (Inches(0.45), Inches(2.70), Inches(19.0), Inches(0.78), "https://affiliate-program.amazon.in/"),
-            (Inches(0.45), Inches(3.55), Inches(19.0), Inches(0.78), "https://affiliate.nykaa.com/"),
-            (Inches(0.45), Inches(4.40), Inches(19.0), Inches(0.78), "https://affiliate.flipkart.com/"),
-            (Inches(0.45), Inches(5.25), Inches(19.0), Inches(0.78), "https://www.myntra.com/"),
+            (Inches(0.45), Inches(10.50), Inches(10.0), Inches(0.45), "https://github.com/Samik123Mit/abc/blob/main/DICE_GATE1_AUDIT_WORKBOOK.md"),
+        ],
+        8: [
+            (Inches(0.45), Inches(2.65), Inches(4.0), Inches(0.78), "https://support.google.com/youtube/answer/13376398"),
+            (Inches(0.45), Inches(3.47), Inches(4.0), Inches(0.78), "https://affiliate-program.amazon.in/"),
+            (Inches(0.45), Inches(4.29), Inches(4.0), Inches(0.78), "https://affiliate.nykaa.com/"),
+            (Inches(0.45), Inches(5.11), Inches(4.0), Inches(0.78), "https://affiliate.flipkart.com/"),
+            (Inches(0.45), Inches(5.93), Inches(4.0), Inches(0.78), "https://www.myntra.com/"),
+            (Inches(0.45), Inches(10.50), Inches(8.0), Inches(0.45), "https://github.com/Samik123Mit/abc/blob/main/DICE_EVIDENCE_DATABASE.md"),
+        ],
+        9: [
+            (Inches(0.45), Inches(10.50), Inches(8.0), Inches(0.45), "https://github.com/Samik123Mit/abc/blob/main/DICE_GATE1_AUDIT_WORKBOOK.md"),
+        ],
+        10: [
+            (Inches(0.45), Inches(10.50), Inches(8.0), Inches(0.45), "https://github.com/Samik123Mit/abc/blob/main/DICE_MASTER_DOC.md"),
+        ],
+        11: [
+            (Inches(0.45), Inches(10.50), Inches(8.0), Inches(0.45), "https://github.com/Samik123Mit/abc/blob/main/DICE_PRIMARY_RESEARCH_TRACKER.md"),
         ],
         12: [
+            (Inches(0.45), Inches(10.50), Inches(8.0), Inches(0.45), "https://github.com/Samik123Mit/abc/blob/main/DICE_PRIMARY_RESEARCH_TRACKER.md"),
+        ],
+        13: [
             (Inches(0.45), Inches(10.50), Inches(19.0), Inches(0.45), "https://github.com/Samik123Mit/abc"),
+            (Inches(12.85), Inches(7.53), Inches(2.8), Inches(0.55), "https://github.com/Samik123Mit/abc"),
+            (Inches(16.17), Inches(7.53), Inches(2.8), Inches(0.55), "https://support.google.com/youtube/answer/13376398"),
+            (Inches(12.85), Inches(8.24), Inches(2.8), Inches(0.55), "https://affiliate-program.amazon.in/"),
+            (Inches(16.17), Inches(8.24), Inches(2.8), Inches(0.55), "https://affiliate.nykaa.com/"),
+            (Inches(12.85), Inches(8.95), Inches(2.8), Inches(0.55), "https://affiliate.flipkart.com/"),
+            (Inches(16.17), Inches(8.95), Inches(2.8), Inches(0.55), "https://www.myntra.com/"),
         ],
     }
     for x, y, w, h, url in sources.get(slide_number, []):
