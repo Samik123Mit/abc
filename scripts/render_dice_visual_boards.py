@@ -185,6 +185,7 @@ def board_cover():
     text(d, (240, 91), "MEESHO DICE CHALLENGE | S3", 16, PLUM_DARK, True, "mm")
     text(d, (84, 218), "Beauty proof is abundant.", 58, WHITE, True)
     text(d, (84, 286), "Commerce handoff is not.", 58, WHITE, True)
+    text(d, (88, 360), "PS: Growing Beauty & Personal Care through Influencers", 15, ORANGE, True)
     text(d, (88, 392), "A measured bridge from creator evidence", 26, CREAM, True)
     text(d, (88, 431), "to confident Meesho purchase.", 26, CREAM, True)
     rounded(d, (84, 525, 730, 680), SOFT, 20)
@@ -408,6 +409,7 @@ def board_quick_win():
         text(d, (x + 12, 928), sub, 9, MUTED, True)
         x += 190
     text(d, (640, 950), "Measure the full chain before scaling creator supply.", 12, MUTED, True, "mm")
+    pill(d, 1610, 975, 240, "LIVE PROTOTYPE ↗", PINK, WHITE, 11)
     footer(d, "All cohort sizes and metrics are proposed operating parameters. The pilot exists to generate Meesho-specific evidence.")
     return b
 
@@ -871,6 +873,7 @@ def board_cover():
     text(d, (240, 91), "MEESHO DICE CHALLENGE | S3", 16, PLUM_DARK, True, "mm")
     text(d, (84, 218), "Beauty proof is abundant.", 58, WHITE, True)
     text(d, (84, 286), "Commerce handoff is not.", 58, WHITE, True)
+    text(d, (88, 360), "PS: Growing Beauty & Personal Care through Influencers", 15, ORANGE, True)
     text(d, (88, 392), "A measured bridge from creator evidence", 26, CREAM, True)
     text(d, (88, 431), "to confident Meesho purchase.", 26, CREAM, True)
     rounded(d, (84, 525, 730, 680), SOFT, 20)
@@ -898,7 +901,7 @@ def board_cover():
     text(d, (1475, 756), "Evidence -> insight -> engine -> pilot", 14, WHITE, True, "mm")
     text(d, (88, 900), "Team Slayed it", 24, WHITE, True)
     text(d, (88, 945), "Samiksha Mitra | IIT Guwahati", 18, CREAM)
-    text(d, (88, 1002), "Evidence cut: 09 September 2026 | 12-slide finalist-length submission", 13, CREAM)
+    text(d, (88, 1002), "Evidence cut: 10 September 2026 | 13-slide finalist-length submission", 13, CREAM)
     return board.convert("RGB")
 
 
@@ -1641,12 +1644,12 @@ def board_sources():
     paragraph(d, (68, 918), "Promote only when respondents + an instrumented handoff show measurable behaviour change.", 1080, 16, PLUM_DARK, True, 4)
     section(d, 1240, 676, 638, "Clickable source index", PINK)
     queue = [
-        ("GITHUB", "full evidence ledger + research files", PLUM),
-        ("YOUTUBE", "official Shopping capability guide", CYAN),
-        ("AMAZON", "India affiliate program artifact", ORANGE),
-        ("NYKAA", "affiliate program artifact", PINK),
-        ("FLIPKART", "affiliate program artifact", ORANGE),
-        ("MYNTRA", "public creator-program source", PLUM),
+        ("LIVE PROTOTYPE", "interactive Beauty Proof Bridge demo", PINK),
+        ("SLAYED IT REPO", "prototype code + product artifacts", PLUM),
+        ("VIDEO DEMO", "recorded product walkthrough", ORANGE),
+        ("MASTER DOC", "full strategy + research narrative", CYAN),
+        ("EVIDENCE LEDGER", "audits, claims and limitations", PLUM),
+        ("EXTERNAL SOURCES", "benchmark links and public artifacts", ORANGE),
     ]
     for i, (head, body, color) in enumerate(queue):
         col = i % 2
