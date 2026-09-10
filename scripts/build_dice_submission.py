@@ -671,12 +671,12 @@ def add_source_hotspots(slide, slide_number):
         ],
         13: [
             (Inches(0.45), Inches(10.50), Inches(19.0), Inches(0.45), "https://github.com/Samik123Mit/abc"),
-            (Inches(12.85), Inches(7.53), Inches(2.8), Inches(0.55), "https://samik123mit.github.io/Slayed-it/"),
-            (Inches(16.17), Inches(7.53), Inches(2.8), Inches(0.55), "https://github.com/Samik123Mit/Slayed-it"),
-            (Inches(12.85), Inches(8.24), Inches(2.8), Inches(0.55), "https://drive.google.com/drive/folders/1G0R-wYdUQVaQYODfuxXvG6kIceHaBhwK?usp=sharing"),
-            (Inches(16.17), Inches(8.24), Inches(2.8), Inches(0.55), "https://github.com/Samik123Mit/Slayed-it/blob/main/DICE_MASTER_DOC.md"),
-            (Inches(12.85), Inches(8.95), Inches(2.8), Inches(0.55), "https://github.com/Samik123Mit/abc/blob/main/DICE_EVIDENCE_DATABASE.md"),
-            (Inches(16.17), Inches(8.95), Inches(2.8), Inches(0.55), "https://support.google.com/youtube/answer/13376398"),
+            (Inches(12.38), Inches(2.25), Inches(3.42), Inches(0.90), "https://samik123mit.github.io/Slayed-it/"),
+            (Inches(16.02), Inches(2.25), Inches(3.42), Inches(0.90), "https://github.com/Samik123Mit/Slayed-it"),
+            (Inches(12.38), Inches(3.31), Inches(3.42), Inches(0.90), "https://drive.google.com/drive/folders/1G0R-wYdUQVaQYODfuxXvG6kIceHaBhwK?usp=sharing"),
+            (Inches(16.02), Inches(3.31), Inches(3.42), Inches(0.90), "https://github.com/Samik123Mit/Slayed-it/blob/main/DICE_MASTER_DOC.md"),
+            (Inches(12.38), Inches(4.38), Inches(3.42), Inches(0.90), "https://github.com/Samik123Mit/abc/blob/main/DICE_EVIDENCE_DATABASE.md"),
+            (Inches(16.02), Inches(4.38), Inches(3.42), Inches(0.90), "https://support.google.com/youtube/answer/13376398"),
         ],
     }
     for x, y, w, h, url in sources.get(slide_number, []):
